@@ -52,6 +52,12 @@ app.use('/professors', professorsRoute);
 const sectionsRoute = require('./routes/sections');
 app.use('/sections', sectionsRoute);
 
+const documentsRoute = require('./routes/documents');
+app.use('/documents', documentsRoute);
+
+const uploadRoute = require('./routes/upload');
+app.use('/upload', uploadRoute);
+
 // // // // // // // // // // 
 const departmentsRoute = require('./routes/departments');
 app.use('/departments', departmentsRoute);
