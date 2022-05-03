@@ -9,13 +9,13 @@ const get_data = require("../requests/get_backend");
 
 router.get('/', authenticateUser, async (req, res) => {
     try{
-        // const username = req.session.user.username;
+        const username = req.session.user.username;
 
-        const data = await get_data('/users/me');
+        //const data = await get_data('/users/me');
         //res.render("dashboard", {username: data.username});
 
 
-        res.render("dashboard");
+        res.render("dashboard", { username });
     }catch(err){
         res.sendStatus(400).json({ message:err });
     }

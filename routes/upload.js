@@ -8,6 +8,8 @@ const authenticateUser = require("../middleware/auth/authentication");
 
 router.post("/upload", authenticateUser, async (req, res) => {
 
+    const username = req.session.user.username;
+
 });
 
 

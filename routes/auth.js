@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
         };
 
         // authentication with keycloak
-        res.render("dashboard");
+        res.render("dashboard", {username});
 
     }catch(err){
         res.sendStatus(400).json({ message:err });

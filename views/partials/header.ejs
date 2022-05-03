@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eHUA Portal</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="/css/dashboard.css" rel="stylesheet">
     <link href="/css/form-validation.css" rel="stylesheet">
+    <link href="/css/contact.css" rel="stylesheet">
+    <link href="/css/labels.css" rel="stylesheet">
+    <link href="/css/list-groups.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -28,11 +32,16 @@
     <!-- <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"></a> -->
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
     <img src="/assets/HUAIMG.jpeg" alt="" width="66" height="40">
+
+    <% if (username) { %>
+    <i class="text-info mx-auto"><%= username %></i>
+    <% } %>
+    
     </a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" name="myInput" id="myInput">
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
         <a class="nav-link px-3" href="/logout">Sign out</a>

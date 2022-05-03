@@ -29,8 +29,11 @@
     "express-flash": "^0.0.2",
     "fs": "^0.0.1-security",
     "minio": "^7.0.28",
+    "morgan": "^1.10.0",
     "node-fetch": "^2.6.1",
-    "path": "^0.12.7"
+    "nodemailer": "^6.7.4",
+    "path": "^0.12.7",
+    "rotating-file-stream": "^3.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

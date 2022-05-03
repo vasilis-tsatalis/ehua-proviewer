@@ -3,25 +3,33 @@ const express = require('express');
 const router = express.Router();
 
 const authenticateUser = require("../middleware/auth/authentication");
+const send_email = require("../tools/email/send_email")
 
 //----------ROUTES----------//
 
 router.get('/', authenticateUser, async (req, res) => {
     try{
         const username = req.session.user.username;
-
-        res.render("departments", {username});
+        res.render("contact", {username});
     }catch(err){
         res.sendStatus(400).json({ message:err });
     }
 });
 
 
-
-
 router.post('/', authenticateUser, async (req, res) => {
     try{
-        res.render("departments");
+
+        const { email, subject, the_body } = req.body;
+
+        const username = req.session.user.username;
+
+        // receive username logged in email
+        var sender = '';
+
+        await send_email(sender, email, subject, the_body);
+
+        res.render("contact", {username});
     }catch(err){
         res.sendStatus(400).json({ message:err });
     }

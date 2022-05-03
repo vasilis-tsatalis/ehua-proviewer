@@ -10,7 +10,7 @@ router.get('/', authenticateUser, async (req, res) => {
     try{
         const username = req.session.user.username;
 
-        res.render("departments", {username});
+        res.render("results", {username});
     }catch(err){
         res.sendStatus(400).json({ message:err });
     }
@@ -21,7 +21,7 @@ router.get('/', authenticateUser, async (req, res) => {
 
 router.post('/', authenticateUser, async (req, res) => {
     try{
-        res.render("departments");
+        res.render("results");
     }catch(err){
         res.sendStatus(400).json({ message:err });
     }

@@ -8,8 +8,9 @@ const authenticateUser = require("../middleware/auth/authentication");
 
 router.get('/', authenticateUser, async (req, res) => {
     try{
+        const username = req.session.user.username;
 
-        res.render("documents");
+        res.render("documents", {username});
     }catch(err){
         res.sendStatus(400).json({ message:err });
     }
